@@ -1,16 +1,12 @@
-#include <iostream>
+#include <stdio.h>
 #include <windows.h>
 #include <atlimage.h>
-#include <wtsapi32.h>
-#include <tlhelp32.h>
 #include "winternl.h"
 
 #pragma comment(lib, "user32.lib")
 #pragma comment(lib, "wtsapi32.lib")
 
 #define FILENAME L"scr.jpg"
-
-typedef NTSTATUS(*MYPROC) (HANDLE, PROCESSINFOCLASS, PVOID, ULONG, PULONG);
 
 void Error(const char* name) {
     printf("%s Error: %d\n", name, GetLastError());
